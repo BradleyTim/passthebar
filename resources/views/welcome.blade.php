@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
+        <div class="container flex-layout">
+            {{-- @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
@@ -26,13 +26,16 @@
                         @endif
                     @endauth
                 </div>
-            @endif
-
+            @endif --}}
+            <section>
+                @include('layouts.header')
+            </section>
             <div class="content">
-                <div class="title m-b-md">
-                    PassTheBar
-                </div>
+                @yield('content')
             </div>
+            <section>
+                @include('layouts.footer')
+            </section>
         </div>
     </body>
 </html>
