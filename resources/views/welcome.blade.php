@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>PassTheBar</title>
+        <title>PTB - Pass the bar exams in Kenya</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -27,15 +27,11 @@
                     @endauth
                 </div>
             @endif --}}
-            <section>
-                @include('layouts.header')
-            </section>
+            @include('layouts.header')
             <div class="content">
                 @yield('content')
             </div>
-            <section>
-                @include('layouts.footer')
-            </section>
+            @include('layouts.footer')
         </div>
     </body>
 </html>

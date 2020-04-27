@@ -1,7 +1,5 @@
 @extends('welcome')
 
 @section('content')
-  <div class="title m-b-md">
-    PassTheBar
-  </div>
+  @include('layouts.hero')
 @endsection
