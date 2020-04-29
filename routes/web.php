@@ -12,3 +12,4 @@ Route::get('about', function () {
 });
 
 Route::get('blog', 'BlogController@index');
+Route::get('blog/create', 'BlogController@create');
