@@ -146,3 +146,46 @@ footer p {
 .card-title {
   font-size: 1rem;
 }
+
+/* create blog page */
+
+.create-blog {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.create-blog h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.create-blog .form-group {
+  margin-bottom: 1rem;
+}
+
+.create-blog label {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.create-blog .form-control {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1.15rem;
+  border: 1px solid #eee;
+  border-radius: 2px;
+}
+
+.create-blog .btn {
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 0.5rem 1.5rem;
+  color: #eee;
+  background: #000;
+  border: 1px solid #eee;
+  border-radius: 2px;
+}
