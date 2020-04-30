@@ -2,6 +2,7 @@
 
 @section('content')
   <form class="create-blog" action="/blog/create" method="POST">
+    @csrf
     <h2>Create A New Blog Post</h2>
     <div class="form-group">
       <label for="title">Title</label>
