@@ -18,13 +18,15 @@ class BlogController extends Controller
         return view('blog.create');
     }
 
-    public function store ()
+    public function store (Request $request)
     {
-        $blog = new Blog();
-        $blog->title = request('title');
-        $blog->slug = request('slug');
-        $blog->body = request('body');
-        $blog->save();
-        return redirect('/');
+        $validatedEntries = $request->validate([
+            'title' => ['required', 'min:3', 'max:140'],
+            'slug' => ['required', 'min:3', 'max:255'],
+            'body' => ['required', 'min:3'],
+        ]);
+
+        Blog::create($validatedEntries);
+        return redirect('/blog');
     }
 }
