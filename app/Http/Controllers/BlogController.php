@@ -17,4 +17,14 @@ class BlogController extends Controller
     {
         return view('blog.create');
     }
+
+    public function store ()
+    {
+        $blog = new Blog();
+        $blog->title = request('title');
+        $blog->slug = request('slug');
+        $blog->body = request('body');
+        $blog->save();
+        return redirect('/');
+    }
 }
