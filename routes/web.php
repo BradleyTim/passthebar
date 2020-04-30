@@ -13,3 +13,4 @@ Route::get('about', function () {
 
 Route::get('blog', 'BlogController@index');
 Route::get('blog/create', 'BlogController@create');
+Route::post('blog/create', 'BlogController@store');
