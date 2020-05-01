@@ -4,7 +4,7 @@
   @forelse ($blogs as $blog)
     <div class="card">
       <h2 class="card-title">
-        {{ $blog->title }}  
+      <a href="{{ route('blog.show', $blog->id) }}">{{ $blog->title }}</a> 
       </h2>  
     </div>
     <hr>
