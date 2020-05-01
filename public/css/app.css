@@ -199,3 +199,33 @@ footer p {
   border: 1px solid #eee;
   border-radius: 2px;
 }
+
+/* show blog page */
+
+.show-blog {
+  width: 90%;
+  margin: 0 auto;
+  /* border: 1px solid #444; */
+  text-align: left;
+}
+
+.show-blog .blog {
+  width: 50%;
+}
+
+.show-blog .blog-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.show-blog .blog-slug {
+  font-size: 1.2rem;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+
+.show-blog .blog-body {
+  font-size: 1.15rem;
+  color: #444;
+}
