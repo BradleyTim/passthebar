@@ -13,6 +13,12 @@ class BlogController extends Controller
         return view('blog.index', ['blogs' => $blogs]);
     }
 
+    public function show (Request $request)
+    {
+        $blog = Blog::findOrFail($request->id);
+        return view('blog.show', ['blog' => $blog]);
+    }
+
     public function create ()
     {
         return view('blog.create');
