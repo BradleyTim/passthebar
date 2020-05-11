@@ -12,6 +12,6 @@ Route::get('about', function () {
 });
 
 Route::get('blog', 'BlogController@index')->name('blog.index');
-Route::get('blog/{id}', 'BlogController@show')->name('blog.show');
-Route::get('blog/create', 'BlogController@create')->name('blog.create');
 Route::post('blog/create', 'BlogController@store')->name('blog.store');
+Route::get('blog/create', 'BlogController@create')->name('blog.create');
+Route::get('blog/{id}', 'BlogController@show')->name('blog.show');
