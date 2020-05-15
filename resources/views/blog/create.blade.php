@@ -1,6 +1,9 @@
 @extends('welcome')
 
 @section('content')
+  @if(session()->has('message'))
+    <div class="alert alert-success">{{ session()->get('message')}}</div>
+  @endif
   <form class="create-blog" action="/blog" method="POST">
     @csrf
     <h4 class="font-weight-light text-capitalize mb-3">Create A New Blog Post</h4>

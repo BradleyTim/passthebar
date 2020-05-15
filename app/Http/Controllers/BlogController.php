@@ -33,6 +33,6 @@ class BlogController extends Controller
         ]);
 
         Blog::create($validatedEntries);
-        return redirect('/blog');
+        return back()->with('message', 'Blog created succesfully');
     }
 }

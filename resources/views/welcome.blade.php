@@ -33,7 +33,7 @@
                 </div>
             @endif --}}
             @include('layouts.header')
-            <div class="container" style="min-height: 60vh;">
+            <div class="container" style="min-height: 70vh;">
                 @yield('content')
             </div>
             @include('layouts.footer')
