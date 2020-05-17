@@ -9,6 +9,6 @@ $factory->define(Blog::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence,
         'slug' => $faker->text,
-        'body' => $faker->paragraph(3),
+        'body' => $faker->paragraphs(3),
     ];
 });

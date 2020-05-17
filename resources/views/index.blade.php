@@ -1,5 +1,5 @@
 @extends('welcome')
 
 @section('content')
-  @include('layouts.hero')
+  @include('app.hero')
 @endsection
