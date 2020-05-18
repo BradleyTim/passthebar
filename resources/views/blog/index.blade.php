@@ -8,6 +8,6 @@
       </h4>  
     </div>
   @empty
-    <p class="display-4 text-muted center">It's empty in here for now</p> 
+    <p class="display-4 text-muted center">It's empty in here for now. No relevant articles yet.</p> 
   @endforelse 
 @endsection

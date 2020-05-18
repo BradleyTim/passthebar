@@ -4,12 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Blog;
+use App\Tag;
 
 class BlogController extends Controller
 {
     public function index ()
     {
-        $blogs = Blog::latest()->get();
+        if(request('tag')) {
+            $blogs = Tag::where('name', request('tag'))->firstOrFail()->blogs;
+        } else {
+            $blogs = Blog::latest()->get();
+        }
         return view('blog.index', ['blogs' => $blogs]);
     }
 
@@ -21,10 +26,23 @@ class BlogController extends Controller
 
     public function create ()
     {
-        return view('blog.create');
+        return view('blog.create', ['tags' => Tag::all()]);
     }
 
     public function store (Request $request)
+    {
+        $blog = new Blog($this->blogValidate($request));
+
+        $blog->user_id = auth()->user()->id;
+
+        $blog->save();
+
+        $blog->tags()->attach(request('tags'));
+
+        return back()->with('message', 'Blog created succesfully');
+    }
+
+    public function blogValidate(Request $request)
     {
         $validatedEntries = $request->validate([
             'title' => ['required', 'min:3', 'max:140'],
@@ -32,7 +50,6 @@ class BlogController extends Controller
             'body' => ['required', 'min:3'],
         ]);
 
-        Blog::create($validatedEntries);
-        return back()->with('message', 'Blog created succesfully');
+        return $validatedEntries;
     }
 }

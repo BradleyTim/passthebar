@@ -28,6 +28,17 @@
         <div class="alert alert-danger mt-2">{{ $message }}</div>
       @enderror
     </div>
+    <div class="form-group mb-3">
+      <label for="tags">Tags</label>
+      <select name="tags[]" id="tags" class="form-control" value="{{ old('tags') }}" multiple>
+        @foreach ($tags as $tag)
+          <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+        @endforeach
+      </select>
+      @error('tags')
+        <div class="alert alert-danger mt-2">{{ $message }}</div>
+      @enderror
+    </div>
     <button type="submit" class="btn btn-primary mb-3">Create Blog</button>
   </form>
 @endsection

@@ -14,7 +14,15 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in {{ auth()->user()->name }}
+                </div>
+            </div>
+            <div class="card mt-3">
+                <div class="card-header">Blog Posts</div>
+
+                <div class="card-body">
+                    <h4>Create a new Blog</h4>
+                <a class="btn btn-primary btn-sm" href="{{ route('blog.create')}}">Create</a>
                 </div>
             </div>
         </div>
