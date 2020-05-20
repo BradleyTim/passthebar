@@ -16,4 +16,11 @@
     </div>
     <button type="submit" class="btn btn-primary mb-3">Create Tag</button>
   </form>
+  <ul class="list-group mt-3">
+    @forelse ($tags as $tag)
+      <li class="list-group-item">{{ $tag->name }}</li> 
+    @empty
+      <li class="list-group-item">No tags yet. Create One!</li>
+    @endforelse
+  </ul>
 @endsection

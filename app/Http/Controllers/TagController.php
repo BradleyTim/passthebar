@@ -17,7 +17,7 @@ class TagController extends Controller
 
     public function create ()
     {
-        return view('tags.create');
+        return view('tags.create', ['tags' => Tag::all()]);
     }
 
     public function store (Request $request)
