@@ -7,3 +7,13 @@
 body {
   font-family: 'Open Sans', sans-serif;
 }
+
+.blog-list {
+  padding: 1.5rem 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.text-black {
+  color: #444;
+}
