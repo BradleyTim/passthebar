@@ -10,10 +10,22 @@ body {
 
 .blog-list {
   padding: 1.5rem 0;
-  border-top: 1px solid #eee;
+  /* border-top: 1px solid #eee; */
   border-bottom: 1px solid #eee;
 }
 
 .text-black {
   color: #444;
+}
+
+.bg-logo {
+  background-color: #000;
+  color: #fff !important;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.nav-padding {
+  padding: 0.35rem 0;
 }
