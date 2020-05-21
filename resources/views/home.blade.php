@@ -21,21 +21,35 @@
                         </div>
                     @endif
 
-                    You are logged in {{ auth()->user()->name }}
+                    You are logged in, <span class="font-weight-bold">{{ auth()->user()->name }}</span>!
                 </div>
             </div>
             <div class="card mt-3">
                 <div class="card-header">Blog Posts</div>
                 <div class="card-body">
                     <h4>Create a new Blog</h4>
-                    <a class="btn btn-primary btn-sm" href="{{ route('blog.create')}}">Create a Blog</a>
+                    <a class="btn btn-primary btn-sm" href="{{ route('blog.create')}}">Blog Posts</a>
+                    <ul class="list-group mt-3">
+                        @forelse ($blogs as $blog)
+                            <li class="list-group-item text-truncate">{{ $blog->title }}</li> 
+                        @empty
+                            <li class="list-group-item">No blog posts yet. Create One!</li>
+                        @endforelse
+                    </ul>
                 </div>
             </div>
             <div class="card mt-3">
                 <div class="card-header">Tags</div>
                 <div class="card-body">
                     <h4>Create a new Tag</h4>
-                    <a class="btn btn-primary btn-sm" href="{{ route('tags.create')}}">Create a Tag</a>
+                    <a class="btn btn-primary btn-sm" href="{{ route('tags.create')}}">Tags</a>
+                    <ul class="list-group mt-3">
+                        @forelse ($tags as $tag)
+                            <li class="list-group-item">{{ $tag->name }}</li> 
+                        @empty
+                            <li class="list-group-item">No tags in here yet. Create One!</li>
+                        @endforelse
+                    </ul>
                 </div>
             </div>
         </div>

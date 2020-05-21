@@ -1,4 +1,4 @@
-@extends('welcome')
+@extends('layouts.app')
 
 @section('content')
  <section class="pr-5 show-blog">

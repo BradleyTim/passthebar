@@ -1,5 +1,5 @@
-@extends('welcome')
+@extends('layouts.app')
 
 @section('content')
-  @include('app.hero')
+  @include('layouts.hero')
 @endsection
