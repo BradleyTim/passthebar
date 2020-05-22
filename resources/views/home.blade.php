@@ -28,10 +28,20 @@
                 <div class="card-header">Blog Posts</div>
                 <div class="card-body">
                     <h4>Create a new Blog</h4>
-                    <a class="btn btn-primary btn-sm" href="{{ route('blog.create')}}">Blog Posts</a>
+                    <a class="btn btn-primary btn-sm mb-3" href="{{ route('blog.create')}}">Blog Posts</a>
+                    @if(session()->has('message'))
+                        <div class="alert alert-success">{{ session()->get('message')}}</div>
+                    @endif
                     <ul class="list-group mt-3">
                         @forelse ($blogs as $blog)
-                            <li class="list-group-item text-truncate">{{ $blog->title }}</li> 
+                            <li class="list-group-item text-truncate d-flex justify-content-between">
+                              <a href="{{ route('blog.show', $blog->id) }}">{{ $blog->title }}</a>
+                              <form method="POST" action="{{ route('blog.destroy', $blog->id) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                              </form>
+                            </li> 
                         @empty
                             <li class="list-group-item">No blog posts yet. Create One!</li>
                         @endforelse

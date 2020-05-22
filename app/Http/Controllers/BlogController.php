@@ -18,9 +18,9 @@ class BlogController extends Controller
         return view('blog.index', ['blogs' => $blogs]);
     }
 
-    public function show (Request $request)
+    public function show (Request $request, Blog $blog)
     {
-        $blog = Blog::findOrFail($request->id);
+        // $blog = Blog::findOrFail($request->id);
         return view('blog.show', ['blog' => $blog]);
     }
 
@@ -40,6 +40,12 @@ class BlogController extends Controller
         $blog->tags()->attach(request('tags'));
 
         return back()->with('message', 'Blog created succesfully');
+    }
+
+    public function destroy (Blog $blog)
+    {
+        $blog->delete();
+        return back()->with('message', 'Blog deleted successfully');
     }
 
     public function blogValidate(Request $request)
