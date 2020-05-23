@@ -27,6 +27,12 @@ class TagController extends Controller
         return back()->with('message', 'Tag created succesfully');
     }
 
+    public function destroy (Tag $tag)
+    {
+        $tag->delete();
+        return back()->with('message', 'Tag deleted successfully');
+    }
+
     public function tagValidate(Request $request)
     {
         $validatedEntries = $request->validate([

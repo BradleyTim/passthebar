@@ -21,6 +21,7 @@ Route::delete('blog/{blog}', 'BlogController@destroy')->name('blog.destroy');
 // tag routes
 Route::get('tags/create', 'TagController@create')->name('tags.create')->middleware('auth');
 Route::post('tags/create', 'TagController@store')->name('tags.store');
+Route::delete('tags/{tag}', 'TagController@destroy')->name('tags.destroy');
 
 // auth routes
 Auth::routes();

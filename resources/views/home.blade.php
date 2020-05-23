@@ -24,14 +24,14 @@
                     You are logged in, <span class="font-weight-bold">{{ auth()->user()->name }}</span>!
                 </div>
             </div>
+            @if(session()->has('message'))
+                <div class="alert alert-success mt-3">{{ session()->get('message')}}</div>
+            @endif
             <div class="card mt-3">
                 <div class="card-header">Blog Posts</div>
                 <div class="card-body">
                     <h4>Create a new Blog</h4>
                     <a class="btn btn-primary btn-sm mb-3" href="{{ route('blog.create')}}">Blog Posts</a>
-                    @if(session()->has('message'))
-                        <div class="alert alert-success">{{ session()->get('message')}}</div>
-                    @endif
                     <ul class="list-group mt-3">
                         @forelse ($blogs as $blog)
                             <li class="list-group-item text-truncate d-flex justify-content-between">
@@ -55,7 +55,14 @@
                     <a class="btn btn-primary btn-sm" href="{{ route('tags.create')}}">Tags</a>
                     <ul class="list-group mt-3">
                         @forelse ($tags as $tag)
-                            <li class="list-group-item">{{ $tag->name }}</li> 
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a href="{{ route('tags.create', $tag->id) }}">{{ $tag->name }}</a>
+                                <form method="POST" action="{{ route('tags.destroy', $tag->id) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                </form>
+                            </li> 
                         @empty
                             <li class="list-group-item">No tags in here yet. Create One!</li>
                         @endforelse
