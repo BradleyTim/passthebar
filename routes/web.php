@@ -19,8 +19,10 @@ Route::get('blog/{blog}', 'BlogController@show')->name('blog.show');
 Route::delete('blog/{blog}', 'BlogController@destroy')->name('blog.destroy');
 
 // tag routes
+Route::post('tags', 'TagController@store')->name('tags.store');
 Route::get('tags/create', 'TagController@create')->name('tags.create')->middleware('auth');
-Route::post('tags/create', 'TagController@store')->name('tags.store');
+Route::put('tags/{tag}', 'TagController@update')->name('tags.update');
+Route::get('tags/{tag}/edit', 'TagController@edit')->name('tags.edit');
 Route::delete('tags/{tag}', 'TagController@destroy')->name('tags.destroy');
 
 // auth routes

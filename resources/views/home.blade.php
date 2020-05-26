@@ -57,11 +57,14 @@
                         @forelse ($tags as $tag)
                             <li class="list-group-item d-flex justify-content-between">
                                 <a href="{{ route('tags.create', $tag->id) }}">{{ $tag->name }}</a>
-                                <form method="POST" action="{{ route('tags.destroy', $tag->id) }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                                </form>
+                                <div class="d-flex justify-content-between">
+                                    <a class="btn btn-sm btn-primary mr-3" href="{{ route('tags.edit', $tag->id) }}">Edit</a>
+                                    <form method="POST" action="{{ route('tags.destroy', $tag->id) }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                    </form>
+                                </div>
                             </li> 
                         @empty
                             <li class="list-group-item">No tags in here yet. Create One!</li>

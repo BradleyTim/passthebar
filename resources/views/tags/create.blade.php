@@ -4,7 +4,7 @@
   @if(session()->has('message'))
     <div class="alert alert-success">{{ session()->get('message')}}</div>
   @endif
-  <form class="" action="/tags/create" method="POST">
+  <form class="" action="/tags" method="POST">
     @csrf
     <h4 class="font-weight-light text-capitalize mb-3">Create A New Tag</h4>
     <div class="form-group mb-3">
