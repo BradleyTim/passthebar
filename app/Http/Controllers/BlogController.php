@@ -42,6 +42,30 @@ class BlogController extends Controller
         return back()->with('message', 'Blog created succesfully');
     }
 
+    public function edit (Blog $blog)
+    {
+        return view('blog.edit', ['blog' => $blog, 'tags' => Tag::all()]);
+    }
+
+    public function update (Request $request, Blog $blog)
+    {
+        $this->blogValidate($request);
+
+        $blog = Blog::find($blog->id);
+
+        // $blog->user_id = auth()->user()->id;
+
+        $blog->update([
+            'title' => $request->title,
+            'slug' => $request->slug,
+            'body' => $request->body,
+            'user_id' => auth()->user()->id,
+        ]);
+
+        $blog->tags()->attach(request('tags'));
+        return back()->with('message', 'Blog updated successfully');
+    }
+
     public function destroy (Blog $blog)
     {
         $blog->delete();

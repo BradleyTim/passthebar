@@ -36,11 +36,14 @@
                         @forelse ($blogs as $blog)
                             <li class="list-group-item text-truncate d-flex justify-content-between">
                               <a href="{{ route('blog.show', $blog->id) }}">{{ $blog->title }}</a>
-                              <form method="POST" action="{{ route('blog.destroy', $blog->id) }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                              </form>
+                              <div class="d-flex justify-content-between">
+                                    <a class="btn btn-sm btn-primary mr-3" href="{{ route('blog.edit', $blog->id) }}">Edit</a>
+                                    <form method="POST" action="{{ route('blog.destroy', $blog->id) }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                    </form>
+                              </div>
                             </li> 
                         @empty
                             <li class="list-group-item">No blog posts yet. Create One!</li>

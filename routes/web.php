@@ -16,6 +16,8 @@ Route::get('blog', 'BlogController@index')->name('blog.index');
 Route::post('blog', 'BlogController@store')->name('blog.store');
 Route::get('blog/create', 'BlogController@create')->name('blog.create')->middleware('auth');
 Route::get('blog/{blog}', 'BlogController@show')->name('blog.show');
+Route::put('blog/{blog}', 'BlogController@update')->name('blog.update');
+Route::get('blog/{blog}/edit', 'BlogController@edit')->name('blog.edit');
 Route::delete('blog/{blog}', 'BlogController@destroy')->name('blog.destroy');
 
 // tag routes
