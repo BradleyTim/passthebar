@@ -8,10 +8,30 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+ul {
+  list-style: none;
+}
+
+li {
+  padding-right: 0.5rem;
+}
+
 .blog-list {
   padding: 1.5rem 0;
   /* border-top: 1px solid #eee; */
   border-bottom: 1px solid #eee;
+}
+
+.title-text {
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.show-title-text {
+  font-size: 1.35rem;
+  font-weight: 900;
+  margin-top: 1rem;
 }
 
 .text-black {

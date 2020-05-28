@@ -4,7 +4,7 @@
   @forelse ($blogs as $blog)
     <div class="blog-list">
       <h4 class="font-weight-bold text-capitalize">
-        <a class="text-decoration-none text-black" href="{{ route('blog.show', $blog->id) }}">{{ $blog->title }}</a> 
+        <a class="text-decoration-none text-black title-text" href="{{ route('blog.show', $blog->id) }}">{{ $blog->title }}</a> 
       </h4>
       @foreach ($blog->tags as $tag)
         <a class="text-sm text-secondary text-decoration-none pr-2" href="/blog?tag={{ $tag->name }}">#{{ $tag->name }}</a>
