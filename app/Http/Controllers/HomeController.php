@@ -25,6 +25,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home', ['blogs' => Blog::paginate(5), 'tags' => Tag::latest()->get()]);
+        return view('home', ['blogs' => Blog::paginate(5), 'tags' => Tag::paginate(5)]);
     }
 }

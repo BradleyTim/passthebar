@@ -11,6 +11,8 @@
       @endforeach
       <div class="text-sm text-secondary text-decoration-none mt-2">{{ $blog->created_at->format('M d') }}</div>
     </div>
+
+    {{-- {{ $blogs->links() }} --}}
   @empty
     <p class="display-4 text-muted center">It's empty in here for now. No relevant articles yet.</p> 
   @endforelse 
