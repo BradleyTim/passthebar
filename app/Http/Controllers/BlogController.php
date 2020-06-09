@@ -13,7 +13,7 @@ class BlogController extends Controller
         if(request('tag')) {
             $blogs = Tag::where('name', request('tag'))->firstOrFail()->blogs;
         } else {
-            $blogs = Blog::latest()->get();
+            $blogs = Blog::latest()->paginate(10);
         }
         return view('blog.index', ['blogs' => $blogs]);
     }

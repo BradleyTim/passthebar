@@ -13,12 +13,12 @@ Route::get('about', function () {
 
 // blog routes
 Route::get('blog', 'BlogController@index')->name('blog.index');
-Route::post('blog', 'BlogController@store')->name('blog.store');
+Route::post('blog', 'BlogController@store')->name('blog.store')->middleware('auth');
 Route::get('blog/create', 'BlogController@create')->name('blog.create')->middleware('auth');
 Route::get('blog/{blog}', 'BlogController@show')->name('blog.show');
-Route::put('blog/{blog}', 'BlogController@update')->name('blog.update');
-Route::get('blog/{blog}/edit', 'BlogController@edit')->name('blog.edit');
-Route::delete('blog/{blog}', 'BlogController@destroy')->name('blog.destroy');
+Route::put('blog/{blog}', 'BlogController@update')->name('blog.update')->middleware('auth');
+Route::get('blog/{blog}/edit', 'BlogController@edit')->name('blog.edit')->middleware('auth');;
+Route::delete('blog/{blog}', 'BlogController@destroy')->name('blog.destroy')->middleware('auth');
 
 // tag routes
 Route::post('tags', 'TagController@store')->name('tags.store');
