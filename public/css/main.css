@@ -49,3 +49,9 @@ li {
 .nav-padding {
   padding: 0.35rem 0;
 }
+
+.links-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
