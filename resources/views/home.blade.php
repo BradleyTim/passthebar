@@ -30,8 +30,8 @@
             <div class="card mt-3">
                 <div class="card-header">Blog Posts</div>
                 <div class="card-body">
-                    <h4>Create a new Blog</h4>
-                    <a class="btn btn-primary btn-sm mb-3" href="{{ route('blog.create')}}">Blog Posts</a>
+                    <h4>Add a new Blog</h4>
+                    <a class="btn btn-primary btn-sm mb-3" href="{{ route('blog.create')}}">New Blog Posts</a>
                     <ul class="list-group my-3">
                         @forelse ($blogs as $blog)
                             <li class="list-group-item text-truncate d-flex justify-content-between">
@@ -58,8 +58,8 @@
             <div class="card mt-3">
                 <div class="card-header">Tags</div>
                 <div class="card-body">
-                    <h4>Create a new Tag</h4>
-                    <a class="btn btn-primary btn-sm" href="{{ route('tags.create')}}">Tags</a>
+                    <h4>Add a new Tag</h4>
+                    <a class="btn btn-primary btn-sm" href="{{ route('tags.create')}}">Add a new Tag</a>
                     <ul class="list-group my-3">
                         @forelse ($tags as $tag)
                             <li class="list-group-item d-flex justify-content-between">
