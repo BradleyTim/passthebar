@@ -21,8 +21,8 @@ class BlogTag extends Migration
 
             $table->unique(['blog_id', 'tag_id']);
 
-            $table->foreign('blog_id')->reference('id')->on('blogs')->onDelete('cascade');
-            $table->foreign('tag_id')->reference('id')->on('tags')->onDelete('cascade');
+            $table->foreign('blog_id')->references('id')->on('blogs')->onDelete('cascade');
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
         });
     }
 
