@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('other-scripts')
+   <script src="https://cdn.tiny.cloud/1/pnyjcujgor1mrrk0ybvzreqxtlh3yxf20i3t85gdoxmykwkk/tinymce/5/tinymce.min.js" referrerpolicy="origin" defer></script>
+   <script src="{{ asset('js/tinymice.js') }}" defer></script> 
+@endsection
+
 @section('content')
   @if(session()->has('message'))
     <div class="alert alert-success">{{ session()->get('message')}}</div>

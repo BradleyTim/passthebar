@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('other-scripts')
+   <script src="https://cdn.tiny.cloud/1/pnyjcujgor1mrrk0ybvzreqxtlh3yxf20i3t85gdoxmykwkk/tinymce/5/tinymce.min.js" referrerpolicy="origin" defer></script>
+   <script src="{{ asset('js/tinymice.js') }}" defer></script> 
+@endsection
+
 @section('content')
   @if(session()->has('message'))
     <div class="alert alert-success">{{ session()->get('message')}}</div>
@@ -23,7 +28,7 @@
     </div>
     <div class="form-group mb-3">
       <label for="body">Body</label>
-      <textarea name="body" id="body" class="form-control" placeholder="Body" cols="30" rows="7">{{ old('body') }}</textarea>
+      <textarea name="body" id="body" class="form-control" placeholder="Body" cols="30" rows="10">{{ old('body') }}</textarea>
       @error('body')
         <div class="alert alert-danger mt-2">{{ $message }}</div>
       @enderror
