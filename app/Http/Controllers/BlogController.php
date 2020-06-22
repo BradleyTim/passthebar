@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Purifier;
 use App\Blog;
 use App\Tag;
 
@@ -33,6 +34,7 @@ class BlogController extends Controller
     {
         $blog = new Blog($this->blogValidate($request));
 
+        $blog->body = Purifier::clean($blog->body);
         $blog->user_id = auth()->user()->id;
 
         $blog->save();
@@ -58,7 +60,7 @@ class BlogController extends Controller
         $blog->update([
             'title' => $request->title,
             'slug' => $request->slug,
-            'body' => $request->body,
+            'body' => Purifier::clean($request->body),
             'user_id' => auth()->user()->id,
         ]);
 
