@@ -8,11 +8,12 @@
      <ul class="d-flex">
        @foreach ($blog->tags as $tag)
         <li>
-          <a href="/blog?tag={{ $tag->name }}">#{{ $tag->name }}</a>
+          <a class="f-size-tags" href="/blog?tag={{ $tag->name }}">#{{ $tag->name }}</a>
         </li>
        @endforeach
      </ul>
-     <div class="text-black text-justify blog-body">{!! $blog->body !!}</div>
+     <div class="text-black text-justify blog-body f-size-body">{!! $blog->body !!}</div>
+    <div class="text-muted">Posted on {{ $blog->created_at->format('M d')}}</div>
    </article>
  </section>
 @endsection

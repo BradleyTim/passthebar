@@ -28,9 +28,9 @@ li {
 }
 
 .show-title-text {
-  font-size: 1.35rem;
+  font-size: 1.8rem;
   font-weight: 900;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .text-black {
@@ -53,4 +53,14 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.f-size-body {
+  font-size: 1.0125rem;
+  line-height: 150%;
+  color: rgb(8, 9, 10);
+}
+
+.f-size-tags {
+  font-size: 0.75rem;
 }
