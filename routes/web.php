@@ -28,7 +28,9 @@ Route::get('tags/{tag}/edit', 'TagController@edit')->name('tags.edit');
 Route::delete('tags/{tag}', 'TagController@destroy')->name('tags.destroy');
 
 // auth routes
-Auth::routes();
+Auth::routes([
+    'register' => false,
+]);
 
 // dashboard routes
 Route::get('/home', 'HomeController@index')->name('home');
