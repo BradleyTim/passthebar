@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
-  <div class="container nav-padding">
+  <div class="container">
       <a class="navbar-brand bg-logo" href="{{ url('/') }}">
           {{ config('app.name', 'PTB') }}
       </a>
