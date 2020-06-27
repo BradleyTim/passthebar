@@ -64,3 +64,12 @@ li {
 .f-size-tags {
   font-size: 0.75rem;
 }
+
+.about-page h3 {
+  font-size: 1.85rem;
+  font-weight: 800;
+}
+
+.about-page p {
+  font-size: 1.125rem;
+}
