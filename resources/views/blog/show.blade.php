@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
- <section class="">
+ <section class="blog-page">
    <article class="blog">
      <h2 class="font-weight-normal display-4 text-capitalize show-title-text">{{ $blog->title }}</h2>
      {{-- <p class="display-5 text-muted blog-slug">{{ $blog->slug }}</p> --}}
